@@ -1,0 +1,74 @@
+.card-header {
+    height: 65px;
+}
+
+.shop_name {
+    font-weight: bold;
+    font-size: 22px;
+    display: inline-block;
+}
+
+.edit {
+    display: flex;
+    justify-content: flex-end;
+    float: right;
+}
+
+.btn {
+    margin: 0 5px;
+}
+
+.name {
+    font-size: 30px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.created_at {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.comment {
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    height: auto;
+    margin: 10px 0 30px 0;
+    border-radius: 3px;
+    background-color: rgb(143, 202, 250);
+}
+
+.comment::before {
+    position: absolute;
+    content: '';
+    left: 15px;
+    bottom: 100%;
+    border-top: solid 0px transparent;
+    border-bottom: solid 15px rgb(143, 202, 250);
+    border-right: solid 13px transparent;
+    border-left: solid 13px transparent;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+}
+
+.comment_submit {
+    float: right;
+}
+
+.top {
+    width: 100px;
+    font-size: 20px;
+    padding-top: 10px;
+    margin: 0 auto;
+    display: block;
+}
+
+.del_comment {
+    float: right;
+    position: relative;
+    top: 10px;
+}
