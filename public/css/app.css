@@ -17048,3 +17048,14 @@ readers do not read off random characters that represent icons */
   font-weight: 900;
 }
 
+.admin {
+    /* padding: 8px; */
+    margin: auto 0;
+    font-size: 10px;
+    color:rgb(175, 175, 175)
+}
+
+.top {
+    font-size: 20px;
+    text-align: center;
+}

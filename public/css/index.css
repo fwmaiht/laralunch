@@ -46,9 +46,25 @@ img {
     color:darkgray;
 }
 
-.admin {
-    /* padding: 8px; */
-    margin: auto 0;
-    font-size: 10px;
-    color:rgb(175, 175, 175)
+.card-header {
+    display: flex;
+    height: 50px;
+    position: relative;
+}
+
+.new {
+    margin-left: 20px;
+    position: absolute;
+    top: 13%;
+}
+
+.random {
+    text-align: center;
+    /* margin: 0 auto; */
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.re-random {
+    text-align: right;
 }

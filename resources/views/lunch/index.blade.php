@@ -9,6 +9,14 @@
             <div class="card">
                 <div class="card-header">
                     登録店一覧
+                    <form method="GET" action="{{ route('lunch.create') }}">
+                    @csrf
+                        @auth
+                        @if (auth()->user()->role === 1)
+                            <button type="submit" class="btn btn-primary new">新規登録</button>
+                        @endif
+                        @endauth
+                    </form>
                 </div>
 
                 <div class="card-body">
@@ -18,18 +26,20 @@
                         </div>
                     @endif
 
-                    <form method="GET" action="{{ route('lunch.create') }}">
+                    {{-- <form method="GET" action="{{ route('lunch.create') }}">
                     @csrf
                         @auth
                         @if (auth()->user()->role === 1)
                             <button type="submit" class="btn btn-primary">新規登録</button>
                         @endif
                         @endauth
-                    </form>
+                    </form> --}}
+
+                    <div class="re-random"><a href="{{ route('lunch.index') }}">他のお店にする</a></div>
                     @if ($random_shop)
-                        今日のランチは ”{{ $random_shop->shop_name}}” に決まり
+                        <p class="random">今日のランチは ”{{ $random_shop->shop_name}}” </p>
                     @else
-                        行きたいお店がない...
+                        <p class="random">行きたいお店がない...</p>
                     @endif
                     <div class="container">
                         @foreach ($lunch_recs as $lunch_rec)

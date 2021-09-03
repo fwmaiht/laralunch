@@ -8,6 +8,7 @@ use App\Models\LunchRec;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\CommentForm;
 
 class CommentController extends Controller
 {
@@ -37,7 +38,7 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(CommentForm $request, $id)
     {
         $user_id = Auth::id();
 

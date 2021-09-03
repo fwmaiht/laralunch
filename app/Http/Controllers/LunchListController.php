@@ -8,6 +8,7 @@ use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use App\services\CheckFormData;
+use App\Http\Requests\ShopContactForm;
 
 class LunchListController extends Controller
 {
@@ -56,7 +57,7 @@ class LunchListController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function store(Request $request)
+    public function store(ShopContactForm $request)
     {
         $id = Auth::id();
         $Lunch = new LunchRec;

@@ -31,6 +31,22 @@
                         </div>
                     @endif
 
+                    @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                    <form method="POST" class="comment-form" action="{{route('comment.store', ['id' => $Lunch->id])}}">
+                        @csrf
+                        コメント<br>
+                        <textarea name="comment" style="margin-bottom: 10px;"></textarea>
+                        <input class="btn btn-info comment-submit" type="submit" value="コメント登録">
+                    </form>
+
                     {{-- {{$Lunch->shop_name}}
                     {{$Lunch->price}}
                     {{$genre}}
@@ -42,18 +58,14 @@
                     @if (auth()->user()->name === $comment->user->name)
                         <form method="POST" class="del_comment" action="{{route('comment.destroy', ['id' => $comment->id])}}">
                             @csrf
-                            <input class="btn btn-danger" type="submit" value="削除する">
+                            <input class="btn btn-danger" type="submit" value="コメント削除">
                         </form>
                     @endif
                     <div class="comment">{{ $comment->comment }}</div>
                     @endforeach
-                    <form method="POST" action="{{route('comment.store', ['id' => $Lunch->id])}}">
-                        @csrf
-                        コメント<br>
-                        <textarea name="comment" style="margin-bottom: 10px;"></textarea>
-                        <input class="btn btn-info comment_submit" type="submit" value="登録する">
-                    </form>
-                    <a class="top" href="{{route('lunch.index')}}">トップ画面</a>
+
+
+                    <div class="top"><a class="top" href="{{route('lunch.index')}}">トップ画面</a></div>
                 </div>
             </div>
         </div>
