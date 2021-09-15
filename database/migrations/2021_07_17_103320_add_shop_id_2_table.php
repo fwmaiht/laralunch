@@ -14,7 +14,7 @@ class AddShopId2Table extends Migration
     public function up()
     {
         Schema::table('comments', function (Blueprint $table) {
-            // $table->unsignedBigInteger('shop_id')->after('user_id');
+            $table->unsignedBigInteger('shop_id')->after('user_id');
 
             $table->foreign('shop_id')
                     ->references('id')
