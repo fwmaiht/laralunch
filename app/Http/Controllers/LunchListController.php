@@ -61,20 +61,26 @@ class LunchListController extends Controller
     {
         $id = Auth::id();
         $Lunch = new LunchRec;
-        $image = $request->file('image');
+        // $image = $request->file('image');
 
-        if($request->hasFile('image')) {
-            $path = \Storage::put('/public', $image);
-            $path = explode('/', $path);
-        } else {
-            $path = null;
-        }
+        // if($request->hasFile('image')) {
+        //     $path = \Storage::put('/public', $image);
+        //     $path = explode('/', $path);
+        // } else {
+        //     $path = null;
+        // }
+
+        $image = base64_encode(file_get_contents($request->image->getRealPath()));
+        // lunch_rec::insert([
+        //     'image' => $image
+        // ]);
 
         $Lunch->shop_name = $request->input('shop_name');
         $Lunch->price = $request->input('price');
         $Lunch->genre = $request->input('genre');
         $Lunch->register = $id;
-        $Lunch->image = $path[1];
+        // $Lunch->image = $path[1];
+        $Lunch->image = $image;
 
         $Lunch->save();
 

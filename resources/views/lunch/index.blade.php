@@ -46,7 +46,8 @@
                         <div class="shop" href="{{ route('lunch.show', ['id' => $lunch_rec->id]) }}">
                             <a class="link" href="{{ route('lunch.show', ['id' => $lunch_rec->id]) }}">
                                 <div class="image">
-                                    <img src="{{ '/storage/' . $lunch_rec->image}}">
+                                    {{-- <img src="{{ '/storage/' . $lunch_rec->image}}"> --}}
+                                    <img src="data:image/png;base64, {{ $lunch_rec->image }}">
                                 </div>
                                 <div class="title">
                                     <div class="name">
