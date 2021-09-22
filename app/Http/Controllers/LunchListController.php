@@ -7,7 +7,7 @@ use App\Models\LunchRec;
 use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use App\services\CheckFormData;
+use App\Services\CheckFormData;
 use App\Http\Requests\ShopContactForm;
 
 class LunchListController extends Controller
