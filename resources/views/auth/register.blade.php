@@ -66,14 +66,14 @@
 
                             <div class="col-md-6">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="role" id="flexRadioDefault1" checked>
-                                    <label class="form-check-label" for="flexRadioDefault1" value="0">
+                                    <input class="form-check-input" type="radio" name="role" id="flexRadioDefault1" value="0" checked>
+                                    <label class="form-check-label" for="flexRadioDefault1">
                                         Standard
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="role" id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault2" value="1">
+                                    <input class="form-check-input" type="radio" name="role" id="flexRadioDefault1" value="1">
+                                    <label class="form-check-label" for="flexRadioDefault2">
                                         Administrator
                                     </label>
                                 </div>
