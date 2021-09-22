@@ -49,17 +49,17 @@ return [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
 
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-
-            // 'host' => $db['host'],
+            // 'host' => env('DB_HOST', '127.0.0.1'),
             // 'port' => env('DB_PORT', '3306'),
-            // 'database' => ltrim($db['path'],'/'),
-            // 'username' => $db['user'],
-            // 'password' => $db['pass'],
+            // 'database' => env('DB_DATABASE', 'forge'),
+            // 'username' => env('DB_USERNAME', 'forge'),
+            // 'password' => env('DB_PASSWORD', ''),
+
+            'host' => $db['host'],
+            'port' => env('DB_PORT', '3306'),
+            'database' => ltrim($db['path'],'/'),
+            'username' => $db['user'],
+            'password' => $db['pass'],
 
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8',
