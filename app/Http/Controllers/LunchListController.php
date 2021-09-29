@@ -134,14 +134,17 @@ class LunchListController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $image = $request->file('image');
+        // データをpublicディレクトリに格納して、DBにはパスのみを保存
+        // $image = $request->file('image');
 
-        if($request->hasFile('image')) {
-            $path = \Storage::put('/public', $image);
-            $path = explode('/', $path);
-        } else {
-            $path = null;
-        }
+        // if($request->hasFile('image')) {
+        //     $path = \Storage::put('/public', $image);
+        //     $path = explode('/', $path);
+        // } else {
+        //     $path = null;
+        // }
+
+        $image = base64_encode(file_get_contents($request->image->getRealPath()));
 
         // editからデータを受け取る
         $Lunch = LunchRec::find($id);
@@ -149,7 +152,8 @@ class LunchListController extends Controller
         $Lunch->shop_name = $request->input('shop_name');
         $Lunch->price = $request->input('price');
         $Lunch->genre = $request->input('genre');
-        $Lunch->image = $path[1];
+        // $Lunch->image = $path[1];
+        $Lunch->image = $image;
 
         // 受け取ったデータを保存する
         $Lunch->save();
